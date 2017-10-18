@@ -30,6 +30,7 @@
     <string name="email_hint">some@one.com</string>
     <string name="password">Password</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="Back_Button">Back</string>
 
     <!-- Text responses -->
     <string name="less_than_25">Life causes you immense pain. You feel confused most of the time. You have few friends and the people

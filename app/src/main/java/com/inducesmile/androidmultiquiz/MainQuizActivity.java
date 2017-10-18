@@ -1,5 +1,6 @@
 package com.inducesmile.androidmultiquiz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 import java.util.List;
 
+import static android.R.attr.duration;
+
 public class MainQuizActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -46,6 +49,8 @@ public class MainQuizActivity extends AppCompatActivity {
     private ScoreObject mScore;
 
     private Button nextQuestionButton;
+
+    private Button PreviousQuestionButton;
 
 
 
@@ -81,6 +86,25 @@ public class MainQuizActivity extends AppCompatActivity {
         quizObject = query.getQuizQuestionsById(quizCategoryId);
 
         nextQuestionButton = (Button)findViewById(R.id.next_quiz);
+        PreviousQuestionButton = (Button)findViewById(R.id.previous_quiz);
+
+
+        PreviousQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quizObject.size() > 0) {
+//                    int oldScore;
+                    questionCount--;
+//                    oldScore = mScore.getScore();                 //Gets the total score at the current time
+//                    mScore.setScore(oldScore - );                 //Takes the previous questions score away from the total score...
+                    allQuestions = quizObject.get(questionCount);
+                    displayQuizQuestions();
+
+                } else {
+                    Toast.makeText(MainQuizActivity.this, "You can not go back any further", Toast.LENGTH_LONG).show();
+                }
+            }
+            });
 
 
 

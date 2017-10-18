@@ -63,7 +63,7 @@ public class QuizMenuActivity extends AppCompatActivity {
         Button btnBrowse = (Button) findViewById(R.id.btnBrowser);
         btnBrowse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri webpage = Uri.parse("http://eagles.ic1d.net.au/");
+                Uri webpage = Uri.parse("https://www.rmit.edu.au/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
